@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ review.title }}{% endblock %}
+{% block content %}
+<h1>{{ review.title }}</h1>
+<p>{{ review.game }} - {{ review.rating }}/10 - {{ review.author }}</p>
+<a href="{{ url_for('index') }}">Back</a>
+{% endblock %}

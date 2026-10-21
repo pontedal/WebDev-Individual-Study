@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}All Reviews{% endblock %}
+{% block content %}
+<h1>All Reviews</h1>
+<ul>
+    {% for r in reviews %}
+    <li>
+        <a href="{{url_for('details', review_id=r.id)}}">{{r.title}}</a>
+        -{{r.game}} ({{ r.rating}}/10) {{r.author}}
+    </li>
+    {%endfor%}
+</ul>
+{% endblock %}
