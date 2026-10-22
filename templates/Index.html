@@ -2,6 +2,7 @@
 {% block title %}All Reviews{% endblock %}
 {% block content %}
 <h1>All Reviews</h1>
+<a href="{{ url_for('create') }}">Write a review</a>
 <ul>
     {% for r in reviews %}
     <li>
