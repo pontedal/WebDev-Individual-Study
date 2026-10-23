@@ -1,0 +1,23 @@
+<form method="post">
+    <label for="game">Game</label>
+    <input id="game" name="game" value="{{ form.get('game', '') }}" required maxlength="100">
+    {% if errors.game %}<span style="color:red">{{ errors.game }}</span>{% endif %}<br>
+
+    <label for="title">Title</label>
+    <input id="title" name="title" value="{{ form.get('title', '') }}" required maxlength="150">
+    {% if errors.title %}<span style="color:red">{{ errors.title }}</span>{% endif %}<br>
+
+    <label for="author">Author</label>
+    <input id="author" name="author" value="{{ form.get('author', '') }}" required maxlength="60">
+    {% if errors.author %}<span style="color:red">{{ errors.author }}</span>{% endif %}<br>
+
+    <label for="rating">Rating (1-10)</label>
+    <input id="rating" name="rating" type="number" min="1" max="10" value="{{ form.get('rating', '') }}" required>
+    {% if errors.rating %}<span style="color:red">{{ errors.rating }}</span>{% endif %}<br>
+
+    <label for="body">Review</label>
+    <textarea id="body" name="body" rows="6" required>{{ form.get('body', '') }}</textarea>
+    {% if errors.body %}<span style="color:red">{{ errors.body }}</span>{% endif %}<br>
+
+    <button type="submit">{{ "Save changes" if review else "Publish" }}</button>
+</form>
